@@ -1,10 +1,11 @@
 <?php
 include 'iSport.php';
+include 'Comparable.php';
 include 'sport.php';
 include 'SportRelais.php';
 include 'SportBallon.php';
 include 'Club.php';
-include 'Comparable.php';
+
 
 echo "Projet héritage et interface<br>";
 echo "<br>";
@@ -52,7 +53,6 @@ if ($_get['valeur']=3)
     $listClub[3]->getNomClub();
 }
 ?>
-    KyNaOo — Aujourd’hui à 13:47
 <?php
 include 'ISport.php';
 include 'Sport.php';
