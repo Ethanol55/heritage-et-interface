@@ -11,12 +11,12 @@ echo "<a href='index.php'>ACCUEIL</a>";
 
 if (isset($_GET['id']) || isset($_POST["Club"])) {
     if (isset($_GET["id"])){
-        $id = $_GET["id"];
+        $idClub = $_GET["id"];
     }else{
-        $id = $_POST["Club"];
+        $idClub = $_POST["idClub"];
     }
     echo '<h2>Liste des sports de '.$listClub[$_GET['id']]->getNomClub().'</h2>';
-    $sp1 = $listClub[$_GET['id']]->getLesSports();
+    $sp1 = $listClub[$idClub]->getLesSports();
     foreach ($sp1 as $keySp1 => $valueSp1){
         echo $valueSp1->getDescription();
     }
