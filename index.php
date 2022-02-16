@@ -1,78 +1,12 @@
 <?php
-include 'iSport.php';
 include 'Comparable.php';
-include 'sport.php';
-include 'SportRelais.php';
-include 'SportBallon.php';
+include 'iSport.php';
 include 'Club.php';
+include 'sport.php';
+include 'SportBallon.php';
+include 'SportRelais.php';
 include 'data.php';
 
-
-echo "Projet héritage et interface<br>";
-echo "<br>";
-$listClub[1]= new Club(1,"PSG",234);
-$listClub[2]= new Club(2,"Lyon",23);
-$listClub[3]= new Club(3,"Saint Etienne",345);
-
-$listClub[1]->AjouterSport(new Sport("Foot",11));
-$listClub[1]->AjouterSport(new Sport("Tennis",1));
-$listClub[2]->AjouterSport(new SportBallon("HandBall",8,40,50));
-$listClub[2]->AjouterSport(new SportRelais("4x100",8,400));
-$listClub[3]->AjouterSport(new Sport("Karate",1));
-$listClub[3]->AjouterSport(new Sport("Judo",1));
-
-$listSport[] = new Sport("Football",11);
-$listSport[] = new  SportRelais("4x100",1,400);
-$listSport[] = new SportBallon("Basket",5,40,50);
-$listSport[] = new Sport("Tennis",1);
-$listSport[] = new SportBallon("Handball",8,40,50);
-$listSport[] = new Sport("Karate",1);
-$listSport[] = new Sport("Judo",1);
-
-$url ="localhost:8000/index.php/123?valeur=1";
-
-$valeur=0;
-if ($_get['valeur']=1)
-{
-    $listClub[1]->getIdClub();
-    $listClub[1]->getLesSports();
-    $listClub[1]->getNbPoints();
-    $listClub[1]->getNomClub();
-}
-if ($_get['valeur']=2)
-{
-    $listClub[2]->getIdClub();
-    $listClub[2]->getLesSports();
-    $listClub[2]->getNbPoints();
-    $listClub[2]->getNomClub();
-}
-if ($_get['valeur']=3)
-{
-    $listClub[3]->getIdClub();
-    $listClub[3]->getLesSports();
-    $listClub[3]->getNbPoints();
-    $listClub[3]->getNomClub();
-}
-echo "Projet héritage et interface<br>";
-echo "<br>";
-$listClub[1]= new Club(1,"PSG",234);
-$listClub[2]= new Club(2,"Lyon",23);
-$listClub[3]= new Club(3,"Saint Etienne",345);
-
-$listClub[1]->AjouterSport(new Sport("Foot",11));
-$listClub[1]->AjouterSport(new Sport("Tennis",1));
-$listClub[2]->AjouterSport(new SportBallon("HandBall",8,40,50));
-$listClub[2]->AjouterSport(new SportRelais("4x100",8,400));
-$listClub[3]->AjouterSport(new Sport("Karate",1));
-$listClub[3]->AjouterSport(new Sport("Judo",1));
-
-$listSport[] = new Sport("Football",11);
-$listSport[] = new  SportRelais("4x100",1,400);
-$listSport[] = new SportBallon("Basket",5,40,50);
-$listSport[] = new Sport("Tennis",1);
-$listSport[] = new SportBallon("Handball",8,40,50);
-$listSport[] = new Sport("Karate",1);
-$listSport[] = new Sport("Judo",1);
 
 echo '<h2>LISTE DES CLUBS</h2><a href=index.php> Accueil</a><br>';
 foreach ($listClub as $keyClub => $valueClub){
@@ -85,19 +19,24 @@ if (isset($_GET['id'])) {
         echo $valueSp1->getDescription();
     }
 }
+
 echo "
         <br>
-        Formulaire ID CLUB
-        <form method='post' name='formIdClub'action='result.php'>;
-        <label for='Club-select'>Choisir un Club:</label>
-            <select name='Club' id='Club-select'>
-                <option value=''>--Choisissez un Club--</option>
-                ";
-                foreach ($listClub as $kFormCLub => $vFormClub){
-                    echo "<option value='".$vFormClub->getIdClub()."'>".$vFormClub->getNomClub()."</option>";
-                }
+        FORMULAIRE ID CLUB
+        <br>
+        <form method='post' name='formIdClub' action='result.php'>;
+            <label for='club-select'>CLUB:</label>
+                <select name='IdClub' id='club-select'>
+                    <option value=''>--Choisir un club--</option>";
 
-            echo "</select>
-        
-            <button type='submit'>ENVOIE</button>
-        </form>";
+foreach ($listClub as $kFormClub => $vFormClub)
+{
+    echo "<option value='".$vFormClub->getIdClub()."'>".$vFormClub->getNomClub()."</option>";
+}
+
+
+echo "</select>
+
+        <button types='submit'>ENVOIEEEEEE !</button>
+        </form>
+";
