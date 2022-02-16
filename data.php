@@ -1,4 +1,7 @@
 <?php
+
+
+
 $listClub[1]= new Club(1,"PSG",234);
 $listClub[2]= new Club(2,"Lyon",23);
 $listClub[3]= new Club(3,"Saint Etienne",345);
